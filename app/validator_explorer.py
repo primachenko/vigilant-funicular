@@ -3,7 +3,7 @@ import json
 import re
 import os
 import logging
-from validator_parser import ValidatorParser
+from app.validator_parser import ValidatorParser
 
 class ValidatorExplorer():
 	release_dir = 'release/'
