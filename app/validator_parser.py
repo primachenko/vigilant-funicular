@@ -39,7 +39,7 @@ class ValidatorParser(HTMLParser):
 		if self.wait_data:
 			self.entry['name'] = data
 		if self.wait_size:
-			data = re.sub("\s\s+", " ", data)
+			data = re.sub(r"\s\s+", " ", data)
 			data = data.split(' ')
 			if len(data) == 5:
 				self.entry['date'] = data[1]
