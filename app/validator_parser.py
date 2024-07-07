@@ -15,7 +15,8 @@ class ValidatorParser(HTMLParser):
 	def write_entry(self):
 		if self.entry:
 			size = self.entry.get('size')
-			if not size:
+			name = self.entry.get('name')
+			if name and name == '../':
 				pass
 			elif size != '-':
 				self.files.append(self.entry)
@@ -45,7 +46,8 @@ class ValidatorParser(HTMLParser):
 				self.entry['date'] = data[1]
 				self.entry['time'] = data[2]
 				self.entry['size'] = data[3]
-				self.write_entry()
+
+			self.write_entry()
 			self.wait_size = False
 
 	def feed(self, url, data):
